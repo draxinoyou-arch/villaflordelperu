@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 650" preserveAspectRatio="none">
+
+<defs>
+
+  <!-- Desenfoque de las hojas -->
+  <filter id="blur">
+    <feGaussianBlur stdDeviation="7"/>
+  </filter>
+
+  <!-- Sombra muy suave -->
+  <filter id="shadow">
+    <feGaussianBlur in="SourceAlpha" stdDeviation="10"/>
+    <feOffset dy="8"/>
+    <feComponentTransfer>
+      <feFuncA type="linear" slope="0.18"/>
+    </feComponentTransfer>
+    <feMerge>
+      <feMergeNode/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+
+  <linearGradient id="green" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#587653"/>
+    <stop offset="100%" stop-color="#879b78"/>
+  </linearGradient>
+
+</defs>
+
+
+<!-- ================================================= -->
+<!-- IZQUIERDA -->
+<!-- ================================================= -->
+
+<g opacity="0.30" filter="url(#blur)">
+
+  <!-- tallo -->
+  <path
+    d="M -30 670
+       C 35 590 70 500 92 405
+       C 112 315 115 210 75 85"
+    fill="none"
+    stroke="#557451"
+    stroke-width="13"
+    stroke-linecap="round"/>
+
+
+  <!-- hojas grandes -->
+  <path
+    d="M 78 520
+       C 5 495 -25 435 5 385
+       C 70 392 105 445 78 520Z"
+    fill="url(#green)"/>
+
+  <path
+    d="M 91 450
+       C 135 380 210 365 255 398
+       C 225 460 160 485 91 450Z"
+    fill="url(#green)"/>
+
+  <path
+    d="M 105 365
+       C 38 345 5 290 27 235
+       C 88 250 125 302 105 365Z"
+    fill="url(#green)"/>
+
+  <path
+    d="M 110 300
+       C 155 235 220 215 265 245
+       C 238 305 173 330 110 300Z"
+    fill="url(#green)"/>
+
+  <path
+    d="M 98 220
+       C 45 190 25 135 55 88
+       C 110 108 135 165 98 220Z"
+    fill="url(#green)"/>
+
+  <path
+    d="M 91 160
+       C 115 95 170 55 220 70
+       C 212 125 160 165 91 160Z"
+    fill="url(#green)"/>
+
+</g>
+
+
+
+<!-- ================================================= -->
+<!-- SOMBRA NATURAL IZQUIERDA -->
+<!-- ================================================= -->
+
+<g opacity="0.12" filter="url(#shadow)">
+
+  <path
+    d="M -40 670
+       C 35 575 70 485 95 390
+       C 120 295 120 190 75 65"
+    fill="none"
+    stroke="#29472b"
+    stroke-width="20"/>
+
+</g>
+
+
+
+<!-- ================================================= -->
+<!-- DERECHA -->
+<!-- ================================================= -->
+
+<g opacity="0.30" filter="url(#blur)">
+
+  <!-- tallo -->
+  <path
+    d="M 1630 670
+       C 1565 590 1530 500 1508 405
+       C 1488 315 1485 210 1525 85"
+    fill="none"
+    stroke="#557451"
+    stroke-width="13"
+    stroke-linecap="round"/>
+
+
+  <!-- hojas grandes -->
+  <path
+    d="M 1522 520
+       C 1595 495 1625 435 1595 385
+       C 1530 392 1495 445 1522 520Z"
+    fill="url(#green)"/>
+
+  <path
+    d="M 1509 450
+       C 1465 380 1390 365 1345 398
+       C 1375 460 1440 485 1509 450Z"
+    fill="url(#green)"/>
+
+  <path
+    d="M 1495 365
+       C 1562 345 1595 290 1573 235
+       C 1512 250 1475 302 1495 365Z"
+    fill="url(#green)"/>
+
+  <path
+    d="M 1490 300
+       C 1445 235 1380 215 1335 245
+       C 1362 305 1427 330 1490 300Z"
+    fill="url(#green)"/>
+
+  <path
+    d="M 1502 220
+       C 1555 190 1575 135 1545 88
+       C 1490 108 1465 165 1502 220Z"
+    fill="url(#green)"/>
+
+  <path
+    d="M 1509 160
+       C 1485 95 1430 55 1380 70
+       C 1388 125 1440 165 1509 160Z"
+    fill="url(#green)"/>
+
+</g>
+
+
+
+<!-- ================================================= -->
+<!-- SOMBRA NATURAL DERECHA -->
+<!-- ================================================= -->
+
+<g opacity="0.12" filter="url(#shadow)">
+
+  <path
+    d="M 1640 670
+       C 1565 575 1530 485 1505 390
+       C 1480 295 1480 190 1525 65"
+    fill="none"
+    stroke="#29472b"
+    stroke-width="20"/>
+
+</g>
+
+</svg>

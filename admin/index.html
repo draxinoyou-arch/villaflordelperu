@@ -1,0 +1,1032 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Administración | Villa Flor del Perú</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- =====================================================
+     LOGIN
+===================================================== -->
+
+<div id="loginScreen" class="login-screen">
+
+    <div class="login-overlay"></div>
+
+    <div class="login-card">
+
+        <div class="login-logo">
+            <div class="leaf-icon">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
+        </div>
+
+        <span class="login-small">
+            PANEL ADMINISTRATIVO
+        </span>
+
+        <h1>
+            Villa Flor<br>
+            <span>del Perú</span>
+        </h1>
+
+        <p class="login-description">
+            Administración de contenido
+        </p>
+
+        <form id="loginForm">
+
+            <div class="input-group">
+
+                <label for="email">
+                    Correo electrónico
+                </label>
+
+                <div class="input-box">
+
+                    <i class="fa-regular fa-envelope"></i>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="admin@villaflordelperu.com"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="input-group">
+
+                <label for="password">
+                    Contraseña
+                </label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="••••••••"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        id="showPassword"
+                        class="password-button">
+
+                        <i class="fa-regular fa-eye"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="login-button"
+                id="loginButton">
+
+                <span>Ingresar al panel</span>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+            <div id="loginError" class="login-error"></div>
+
+        </form>
+
+
+        <div class="login-footer">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            Acceso protegido
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PANEL
+===================================================== -->
+
+<div id="adminPanel" class="admin-panel hidden">
+
+
+    <!-- SIDEBAR -->
+
+    <aside class="sidebar" id="sidebar">
+
+        <div class="sidebar-logo">
+
+            <div class="sidebar-leaf">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
+
+            <div>
+
+                <strong>
+                    VILLA FLOR
+                </strong>
+
+                <span>
+                    DEL PERÚ
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="sidebar-title">
+            ADMINISTRACIÓN
+        </div>
+
+
+        <nav>
+
+            <button
+                class="menu-item active"
+                data-section="inicio">
+
+                <i class="fa-solid fa-house"></i>
+
+                <span>Inicio</span>
+
+            </button>
+
+
+            <button
+                class="menu-item"
+                data-section="destacados">
+
+                <i class="fa-solid fa-star"></i>
+
+                <span>Productos destacados</span>
+
+            </button>
+
+
+            <button
+                class="menu-item"
+                data-section="empresa">
+
+                <i class="fa-solid fa-images"></i>
+
+                <span>Nuestra empresa</span>
+
+            </button>
+
+
+            <button
+                class="menu-item"
+                data-section="categorias">
+
+                <i class="fa-solid fa-layer-group"></i>
+
+                <span>Categorías y plantas</span>
+
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <button id="logoutButton" class="logout-button">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>Cerrar sesión</span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- CONTENIDO -->
+
+    <main class="main-content">
+
+
+        <!-- TOPBAR -->
+
+        <header class="topbar">
+
+            <button id="menuButton" class="mobile-menu">
+
+                <i class="fa-solid fa-bars"></i>
+
+            </button>
+
+
+            <div>
+
+                <span class="topbar-small">
+                    ADMINISTRACIÓN
+                </span>
+
+                <h2 id="pageTitle">
+                    Panel principal
+                </h2>
+
+            </div>
+
+
+            <div class="admin-user">
+
+                <div class="admin-avatar">
+                    <i class="fa-solid fa-leaf"></i>
+                </div>
+
+                <div>
+
+                    <strong id="adminEmail">
+                        Administrador
+                    </strong>
+
+                    <span>
+                        Administrador
+                    </span>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             INICIO
+        ================================================== -->
+
+        <section
+            id="section-inicio"
+            class="content-section active-section">
+
+            <div class="welcome-box">
+
+                <div>
+
+                    <span class="section-label">
+                        VILLA FLOR DEL PERÚ
+                    </span>
+
+                    <h1>
+                        Bienvenido al<br>
+                        <em>panel administrativo.</em>
+                    </h1>
+
+                    <p>
+                        Desde aquí puedes administrar los productos,
+                        fotografías, categorías y plantas que aparecen
+                        en la página web.
+                    </p>
+
+                </div>
+
+                <div class="welcome-decoration">
+
+                    <i class="fa-solid fa-leaf"></i>
+
+                </div>
+
+            </div>
+
+
+            <div class="stats-grid">
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            PRODUCTOS DESTACADOS
+                        </span>
+
+                        <strong id="totalDestacados">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-images"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            FOTOS DE EMPRESA
+                        </span>
+
+                        <strong id="totalEmpresa">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-layer-group"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            CATEGORÍAS
+                        </span>
+
+                        <strong id="totalCategorias">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stat-card">
+
+                    <div class="stat-icon">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+
+                    <div>
+
+                        <span>
+                            PLANTAS
+                        </span>
+
+                        <strong id="totalPlantas">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="quick-card">
+
+                <div class="quick-icon">
+                    <i class="fa-solid fa-circle-info"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        Administración sencilla
+                    </h3>
+
+                    <p>
+                        Agrega, modifica o elimina contenido sin
+                        necesidad de editar el código de la página.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             DESTACADOS
+        ================================================== -->
+
+        <section
+            id="section-destacados"
+            class="content-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        NUESTRA SELECCIÓN
+                    </span>
+
+                    <h1>
+                        Productos destacados
+                    </h1>
+
+                    <p>
+                        Agrega todos los productos que quieras.
+                        No existe límite de 5 productos.
+                    </p>
+
+                </div>
+
+                <button
+                    class="primary-button"
+                    id="newDestacadoButton">
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Agregar producto
+
+                </button>
+
+            </div>
+
+
+            <div
+                id="destacadosList"
+                class="cards-grid">
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             EMPRESA
+        ================================================== -->
+
+        <section
+            id="section-empresa"
+            class="content-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        NUESTRA EMPRESA
+                    </span>
+
+                    <h1>
+                        Fotografías de empresa
+                    </h1>
+
+                    <p>
+                        Administra las tres imágenes utilizadas
+                        en la sección Nuestra Empresa.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="company-grid">
+
+
+                <!-- CALIDAD -->
+
+                <div class="company-card">
+
+                    <div class="company-card-top">
+
+                        <span>
+                            01
+                        </span>
+
+                        <strong>
+                            CALIDAD
+                        </strong>
+
+                    </div>
+
+
+                    <div class="company-image">
+
+                        <img
+                            id="empresaImageCalidad"
+                            src=""
+                            alt="Calidad">
+
+                        <div
+                            class="image-placeholder"
+                            id="empresaPlaceholderCalidad">
+
+                            <i class="fa-solid fa-image"></i>
+
+                            <span>
+                                Sin imagen
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="company-actions">
+
+                        <label class="upload-button">
+
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                            Cambiar imagen
+
+                            <input
+                                type="file"
+                                id="empresaFileCalidad"
+                                accept="image/*"
+                                hidden>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SELECCIÓN -->
+
+                <div class="company-card">
+
+                    <div class="company-card-top">
+
+                        <span>
+                            02
+                        </span>
+
+                        <strong>
+                            SELECCIÓN
+                        </strong>
+
+                    </div>
+
+
+                    <div class="company-image">
+
+                        <img
+                            id="empresaImageSeleccion"
+                            src=""
+                            alt="Selección">
+
+                        <div
+                            class="image-placeholder"
+                            id="empresaPlaceholderSeleccion">
+
+                            <i class="fa-solid fa-image"></i>
+
+                            <span>
+                                Sin imagen
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="company-actions">
+
+                        <label class="upload-button">
+
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                            Cambiar imagen
+
+                            <input
+                                type="file"
+                                id="empresaFileSeleccion"
+                                accept="image/*"
+                                hidden>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROYECCIÓN -->
+
+                <div class="company-card">
+
+                    <div class="company-card-top">
+
+                        <span>
+                            03
+                        </span>
+
+                        <strong>
+                            PROYECCIÓN INTERNACIONAL
+                        </strong>
+
+                    </div>
+
+
+                    <div class="company-image">
+
+                        <img
+                            id="empresaImageProyeccion"
+                            src=""
+                            alt="Proyección internacional">
+
+                        <div
+                            class="image-placeholder"
+                            id="empresaPlaceholderProyeccion">
+
+                            <i class="fa-solid fa-image"></i>
+
+                            <span>
+                                Sin imagen
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="company-actions">
+
+                        <label class="upload-button">
+
+                            <i class="fa-solid fa-cloud-arrow-up"></i>
+
+                            Cambiar imagen
+
+                            <input
+                                type="file"
+                                id="empresaFileProyeccion"
+                                accept="image/*"
+                                hidden>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="info-message">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                <span>
+                    Estas son las únicas tres imágenes que se
+                    administran en esta sección.
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================================
+             CATEGORÍAS
+        ================================================== -->
+
+        <section
+            id="section-categorias"
+            class="content-section">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="section-label">
+                        NUESTRO CATÁLOGO
+                    </span>
+
+                    <h1>
+                        Categorías y plantas
+                    </h1>
+
+                    <p>
+                        Crea categorías y agrega dentro de cada una
+                        las plantas correspondientes.
+                    </p>
+
+                </div>
+
+                <button
+                    class="primary-button"
+                    id="newCategoriaButton">
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Nueva categoría
+
+                </button>
+
+            </div>
+
+
+            <div
+                id="categoriasList"
+                class="categories-list">
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<!-- =====================================================
+     MODAL PRODUCTO DESTACADO
+===================================================== -->
+
+<div
+    id="destacadoModal"
+    class="modal-overlay hidden">
+
+    <div class="modal-card">
+
+        <button
+            class="modal-close"
+            data-close="destacadoModal">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <span class="section-label">
+            PRODUCTO DESTACADO
+        </span>
+
+        <h2 id="destacadoModalTitle">
+            Agregar producto
+        </h2>
+
+
+        <form id="destacadoForm">
+
+            <input
+                type="hidden"
+                id="destacadoId">
+
+
+            <div class="form-group">
+
+                <label>
+                    Nombre del producto
+                </label>
+
+                <input
+                    type="text"
+                    id="destacadoNombre"
+                    placeholder="Ej. Palma Areca"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Fotografía
+                </label>
+
+                <input
+                    type="file"
+                    id="destacadoFile"
+                    accept="image/*">
+
+                <small>
+                    Puedes seleccionar una imagen desde tu computadora.
+                </small>
+
+            </div>
+
+
+            <div
+                id="destacadoPreview"
+                class="upload-preview hidden">
+
+                <img src="" alt="Vista previa">
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="primary-button full">
+
+                <i class="fa-solid fa-floppy-disk"></i>
+
+                Guardar producto
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MODAL CATEGORÍA
+===================================================== -->
+
+<div
+    id="categoriaModal"
+    class="modal-overlay hidden">
+
+    <div class="modal-card">
+
+        <button
+            class="modal-close"
+            data-close="categoriaModal">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <span class="section-label">
+            CATÁLOGO
+        </span>
+
+        <h2>
+            Nueva categoría
+        </h2>
+
+
+        <form id="categoriaForm">
+
+            <div class="form-group">
+
+                <label>
+                    Nombre de la categoría
+                </label>
+
+                <input
+                    type="text"
+                    id="categoriaNombre"
+                    placeholder="Ej. Ornamentales"
+                    required>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="primary-button full">
+
+                <i class="fa-solid fa-plus"></i>
+
+                Crear categoría
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MODAL PLANTA
+===================================================== -->
+
+<div
+    id="plantaModal"
+    class="modal-overlay hidden">
+
+    <div class="modal-card">
+
+        <button
+            class="modal-close"
+            data-close="plantaModal">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <span class="section-label">
+            PLANTA
+        </span>
+
+        <h2>
+            Agregar planta
+        </h2>
+
+
+        <form id="plantaForm">
+
+            <input
+                type="hidden"
+                id="plantaCategoriaId">
+
+
+            <div class="form-group">
+
+                <label>
+                    Nombre de la planta
+                </label>
+
+                <input
+                    type="text"
+                    id="plantaNombre"
+                    placeholder="Ej. Palma Areca"
+                    required>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Fotografía
+                </label>
+
+                <input
+                    type="file"
+                    id="plantaFile"
+                    accept="image/*"
+                    required>
+
+            </div>
+
+
+            <div
+                id="plantaPreview"
+                class="upload-preview hidden">
+
+                <img src="" alt="Vista previa">
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="primary-button full">
+
+                <i class="fa-solid fa-floppy-disk"></i>
+
+                Guardar planta
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div id="toast" class="toast">
+
+    <i class="fa-solid fa-circle-check"></i>
+
+    <span id="toastMessage">
+        Guardado correctamente
+    </span>
+
+</div>
+
+
+<script type="module" src="app.js"></script>
+
+</body>
+</html>
